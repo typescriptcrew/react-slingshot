@@ -1,7 +1,7 @@
 {
-  "name": "react-slingshot",
-  "version": "1.1.1",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "ts-react-slingshot",
+  "version": "1.0.0",
+  "description": "Starter kit for creating apps with TypeScript, React and Redux",
   "scripts": {
     "prestart": "npm run remove-dist",
     "start": "parallelshell \"npm run lint:tools\" \"npm run test:watch\" \"npm run open:src\"",
@@ -13,10 +13,14 @@
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm run clean-dist && npm run build:html",
     "build": "npm run test && babel-node tools/build.js && npm run open:dist",
-    "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel/register --recursive \"./src/**/*.spec.js\"",
+    "test": "cross-env NODE_ENV=test mocha --reporter progress --require ts-node/register --recursive \"./src/**/*.spec.ts\"",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "Cory House",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescriptcrew/ts-react-slingshot.git"
+  },
+  "author": "Nick Taylor",
   "license": "MIT",
   "dependencies": {
     "object-assign": "4.0.1",
@@ -51,6 +55,11 @@
     "rimraf": "2.5.0",
     "sass-loader": "3.1.2",
     "style-loader": "0.13.0",
+    "ts-loader": "0.8.0",
+    "ts-node": "0.5.5",
+    "tslint": "3.3.0",
+    "tslint-loader": "2.1.0",
+    "typescript": "1.8.0",
     "watch": "0.17.1",
     "webpack": "1.12.11",
     "webpack-dev-middleware": "1.4.0",
@@ -58,6 +67,7 @@
     "yargs": "3.32.0"
   },
   "keywords:": [
+    "typescript",
     "react",
     "reactjs",
     "hot",

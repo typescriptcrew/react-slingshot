@@ -1,16 +1,19 @@
 # React Slingshot!
 
-React Slingshot is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
+First off, all the work here aside from plugging in TypeScript and reworking the demo app in TypeScript was done in [@coryhouse](https://github.com/coryhouse)'s [React Slingshot](https://github.com/coryhouse/react-slingshot) project. Having said that, I had a need for a TypeScript React boilerplate, so I went with a project that I thought was solid and modified it to support TypeScript.
+
+TypeScript React Slingshot is a comprehensive starter kit for rapid application development using React. It offers a rich development experience including:
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
+|  [TypeScript](http://www.typescriptlang.org)  |   A typed superset of JavaScript that compiles to plain JavaScript.    | [Pluralsight Course](https://www.pluralsight.com/courses/typescript), [TypeScript REPL](http://www.typescriptlang.org/Playground)  |
 |  [React](https://facebook.github.io/react/)  |   Fast, composable client-side components.    | [Pluralsight Course](https://www.pluralsight.com/courses/react-flux-building-applications)  |
 |  [Redux](http://redux.js.org) |  Enforces unidirectional data flows and immutable, hot reloadable store. Lean alternative to [Facebook's Flux](https://facebook.github.io/flux/docs/overview.html).| [Tutorial](https://egghead.io/series/getting-started-with-redux)    |
 |  [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today.     | [ES6 REPL](https://babeljs.io/repl/), [ES6 vs ES5](http://es6-features.org), [ES6 Katas](http://es6katas.org), [Pluralsight course](https://www.pluralsight.com/courses/javascript-fundamentals-es6)    |
 | [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Includes hot reloading via [react-transform-hmr](https://www.npmjs.com/package/react-transform-hmr). | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
 | [Browsersync](https://www.browsersync.io/) | Lightweight development HTTP server that supports synchronized testing and debugging on multiple devices. | [Intro vid](https://www.youtube.com/watch?time_continue=1&v=heNWfzc7ufQ)|
 | [Mocha](http://mochajs.org) | Automated tests with [Chai](http://chaijs.com/) for assertions and [Cheerio](https://www.npmjs.com/package/cheerio) for DOM testing without a browser using Node. | [Pluralsight Course](https://www.pluralsight.com/courses/testing-javascript) |
-| [TrackJS](https://trackjs.com/) | JavaScript error tracking. | [Free trial](https://my.trackjs.com/signup)|  
+| [TrackJS](https://trackjs.com/) | JavaScript error tracking. | [Free trial](https://my.trackjs.com/signup)|
 | [ESLint](http://eslint.org/)| Lint JS. Reports syntax and style issues. Using [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) for additional React specific linting rules. | |
 | [SASS](http://sass-lang.com/) | Compiled CSS styles with variables, functions, and more. | [Pluralsight Course](https://www.pluralsight.com/courses/better-css)|
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
@@ -20,26 +23,27 @@ The starter kit includes a working example app that puts all of the above to use
 
 ## Get Started
 1. **Initial Machine Setup**. First time running the starter kit? Then complete the [Initial Machine Setup](https://github.com/coryhouse/react-slingshot#initial-machine-setup).
-2. **Clone the project**. `git clone https://github.com/coryhouse/react-slingshot.git`.  
+2. **Clone the project**. `git clone https://github.com/coryhouse/react-slingshot.git`.
 3. **Install Node packages**. `npm install`
-4. **Run the example app**. `npm start -s`  
+4. **Run the example app**. `npm start -s`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, you'll want to keep the command line open at all times so that your code is rebuilt and tests run automatically every time you hit save. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 5. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
 6. **Delete the example app files.** Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](https://github.com/coryhouse/react-slingshot#i-just-want-an-empty-starter-kit).
 
 ##Initial Machine Setup
 1. **Install [Node 4.0.0 or greater](https://nodejs.org)**
-2. **Install [Git](https://git-scm.com/downloads)**. 
-3. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.  
- 
-**On Linux:**  
+2. **Install [Git](https://git-scm.com/downloads)**.
+3. **Install TypeScript**, ```npm i typescript@latest -g```. (On a Mac? You will need to run the install as ```sudo```. If TypeScript 1.8 is not out of beta yet, please install TypeScript 1.8 beta, ```typescript@beta```)
+4. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.
 
- * Run this to [increase the limit](http://stackoverflow.com/questions/16748737/grunt-watch-error-waiting-fatal-error-watch-enospc) on the number of files Linux will watch. [Here's why](https://github.com/coryhouse/react-slingshot/issues/6).    
-`echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p` 
+**On Linux:**
 
-**On Windows:** 
- 
- * **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.  
+ * Run this to [increase the limit](http://stackoverflow.com/questions/16748737/grunt-watch-error-waiting-fatal-error-watch-enospc) on the number of files Linux will watch. [Here's why](https://github.com/coryhouse/react-slingshot/issues/6).
+`echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+
+**On Windows:**
+
+ * **Install [Python 2.7](https://www.python.org/downloads/)**. Browser-sync (and various other Node modules) rely on node-gyp, which requires Python on Windows.
  * **Install C++ Compiler**. [Visual Studio Express](https://www.visualstudio.com/en-US/products/visual-studio-express-vs) comes bundled with a free C++ compiler. Or, if you already have Visual Studio installed: Open Visual Studio and go to File -> New -> Project -> Visual C++ -> Install Visual C++ Tools for Windows Desktop. The C++ compiler is used to compile browser-sync (and perhaps other Node modules).
 
 ##FAQ
@@ -47,7 +51,7 @@ This will run the automated build process, start up a webserver, and open the ap
 This starter kit implements best practices like testing, minification, bundling, and so on. It codifies a long list of decisions that you no longer have to make to get rolling. It saves you from the long, painful process of wiring it all together into an automated dev environment and build process. It's also useful as inspiration for ideas you might want to integrate into your current development environment or build process.
 
 ###What do the scripts in package.json do?
-Unfortunately, scripts in package.json can't be commented inline because the JSON spec doesn't support comments, so I'm providing info on what each script in package.json does here.  
+Unfortunately, scripts in package.json can't be commented inline because the JSON spec doesn't support comments, so I'm providing info on what each script in package.json does here.
 
 | **Script** | **Description** |
 |----------|-------|
@@ -75,17 +79,22 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
 ├── package.json              # Package configuration. The list of 3rd party libraries and utilities
 ├── src                       # Source code
-│   ├── actions               # Flux/Redux actions. List of distinct actions that can occur in the app.  
+│   ├── actions               # Flux/Redux actions. List of distinct actions that can occur in the app.
 │   ├── businessLogic         # Plain old JS objects (POJOs). Pure logic. No framework specific code here.
 │   ├── components            # React components
 │   ├── constants             # Application constants including constants for Redux
 │   ├── containers            # App container for Redux
 │   ├── favicon.ico           # favicon to keep your browser from throwing a 404 during dev. Not actually used in prod build.
-│   ├── index.html            # Start page 
+│   ├── index.html            # Start page
 │   ├── index.js              # Entry point for your app
 │   ├── reducers              # Redux reducers. Your state is altered here based on actions
 │   ├── store                 # Redux store configuration
 │   └── styles                # CSS Styles, typically written in Sass
+│   └── typings               # TypeScript definition files.
+│   └── tsconfig.json         # TypeScript configuration file.
+│   └── tslint.json           # Configures TSLint
+│   └── tsd.json              # List of installed TypeScript definition files
+|
 ├── tools                     # Node scripts that run build related tools
 │   ├── build.js              # Runs the production build
 │   ├── buildHtml.js          # Builds index.html
@@ -94,6 +103,8 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 └── webpack.config.js         # Configures webpack
 ```
 
+###Tell me a bit more about tsconfig.json###
+Please see the TypeScript wiki on [tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json)
 
 ###Where are the files being served from when I run `npm start`?
 Webpack serves your app in memory when you run `npm start`. No physical files are written. However, the web root is /src, so you can reference files under /src in index.html. When the app is built using `npm run build`, physical files are written to /dist and the app is served from /dist.
@@ -104,9 +115,9 @@ Magic! Okay, more specifically, we're handling it differently in dev (`npm start
 When you run `npm start`:
 
  1. The sass-loader compiles Sass into CSS
- 2. Webpack bundles the compiled CSS into bundle.js. Sounds odd, but it works! 
+ 2. Webpack bundles the compiled CSS into bundle.js. Sounds odd, but it works!
  3. bundle.js contains code that loads styles into the &lt;head&gt; of index.html via JavaScript. This is why you don't see a stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either.
- 
+
 The approach above supports hot reloading, which is great for development. However, it also create a flash of unstyled content on load because you have to wait for the JavaScript to parse and load styles before they're applied. So for the production build, we use a different approach:
 
 When you run `npm run build`:
@@ -114,7 +125,7 @@ When you run `npm run build`:
  1. The sass-loader compiles Sass into CSS
  2. The [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) extracts the compiled Sass into styles.css
  3. buildHtml.js adds a reference to the stylesheet to the head of index.html.
- 
+
 For both of the above methods, a separate sourcemap is generated for debugging Sass in [compatible browsers](http://thesassway.com/intermediate/using-source-maps-with-sass).
 
 ###I don't like the magic you just described above. I simply want to use a CSS file.
@@ -122,10 +133,10 @@ No problem. Reference your CSS file in index.html, and add a step to the build p
 
 ### I just want an empty starter kit.
 This starter kit includes an example app so you can see how everything hangs together on a real app. To create an empty project, you can delete the following:
-  
- 1. Components in src/components  
- 2. Styles in src/styles/styles.scss  
- 3. Delete files in src/businessLogic  
+
+ 1. Components in src/components
+ 2. Styles in src/styles/styles.scss
+ 3. Delete files in src/businessLogic
 
 Don't want to use Redux? See the next question for some steps on removing Redux.
 
@@ -145,7 +156,7 @@ Nope. Redux is useful for applications with more complex data flows. If your app
 * Sets NODE_ENV to prod so that React is built in production mode
 * Places the resulting built project files into /dist. (This is the folder you'll expose to the world).
 
-### Why are test files placed alongside the file under test (instead of centralized)? 
+### Why are test files placed alongside the file under test (instead of centralized)?
 Streamlined automated testing is a core feature of this starter kit. All tests are placed in files that end in .spec.js. Spec files are placed in the same directory as the file under test. Why?
 + The existence of tests is highly visible. If a corresponding .spec file hasn't been created, it's obvious.
 + Easy to open since they're in the same folder as the file being tested.
@@ -156,15 +167,15 @@ Streamlined automated testing is a core feature of this starter kit. All tests a
 That said, you can of course place your tests under /test instead, which is the Mocha default. If you do, you can simplify the test script to no longer specify the path. Then Mocha will simply look in /test to find your spec files.
 
 ### How do I debug?
-Since browsers don't currently support ES6, we're using Babel to compile our ES6 down to ES5. This means the code that runs in the browser looks different than what we wrote. But good news, a [sourcemap](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) is generated to enable easy debugging. This means your original JS source will be displayed in your browser's dev console. 
+Since browsers don't currently support ES6, we're using Babel to compile our ES6 down to ES5. This means the code that runs in the browser looks different than what we wrote. But good news, a [sourcemap](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) is generated to enable easy debugging. This means your original JS source will be displayed in your browser's dev console.
 *Note:* When you run `npm start`, no JS is minified. Why? Because minifying slows the build. So JS is only minified when you run the `npm run build` script. See [more on building for production below](https://github.com/coryhouse/react-slingshot#how-do-i-deploy-this).
 
 Also note that no actual physical files are written to the filesystem during the dev build. **For performance, all files exist in memory when served from the webpack server.**. Physical files are only written when you run `npm run build`.
 
-**Tips for debugging via sourcemaps:** 
- 
- 1. Browsers vary in the way they allow you to view the original source. Chrome automatically shows the original source if a sourcemap is available. Safari, in contrast, will display the minified source and you'll [have to cmd+click on a given line to be taken to the original source](http://stackoverflow.com/questions/19550060/how-do-i-toggle-source-mapping-in-safari-7).  
- 2. Do **not** enable serving files from your filesystem in Chrome dev tools. If you do, Chrome (and perhaps other browsers) may not show you the latest version of your code after you make a source code change. Instead **you must close the source view tab you were using and reopen it to see the updated source code**. It appears Chrome clings to the old sourcemap until you close and reopen the source view tab. To clarify, you don't have to close the actual tab that is displaying the app, just the tab in the console that's displaying the source file that you just changed.  
+**Tips for debugging via sourcemaps:**
+
+ 1. Browsers vary in the way they allow you to view the original source. Chrome automatically shows the original source if a sourcemap is available. Safari, in contrast, will display the minified source and you'll [have to cmd+click on a given line to be taken to the original source](http://stackoverflow.com/questions/19550060/how-do-i-toggle-source-mapping-in-safari-7).
+ 2. Do **not** enable serving files from your filesystem in Chrome dev tools. If you do, Chrome (and perhaps other browsers) may not show you the latest version of your code after you make a source code change. Instead **you must close the source view tab you were using and reopen it to see the updated source code**. It appears Chrome clings to the old sourcemap until you close and reopen the source view tab. To clarify, you don't have to close the actual tab that is displaying the app, just the tab in the console that's displaying the source file that you just changed.
  3. If the latest source isn't displaying the console, force a refresh. Sometimes Chrome seems to hold onto a previous version of the sourcemap which will cause you to see stale code.
 
 ### I'm getting an error when running npm install: Failed to locate "CL.exe"

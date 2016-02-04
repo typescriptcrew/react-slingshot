@@ -34,3 +34,7 @@ dist
 
 # Mac files
 .DS_Store
+
+# TypeScript typings folder. Don't need it because tsd install runs and adds them all.
+typings
+*.d.ts

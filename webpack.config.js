@@ -43,13 +43,13 @@ const getEntry = function (env) {
     entry.push('webpack-hot-middleware/client');
   }
 
-  entry.push('./src/index');
+  entry.push('./src/index.ts');
 
   return entry;
 };
 
 const getLoaders = function (env) {
-  const loaders = [{ test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] }];
+  const loaders = [{ test: /\.tsx?$/, include: path.join(__dirname, 'src'), loaders: ['ts-loader', 'tslint-loader'] }];
 
   if (env === productionEnvironment ) {
     // generate separate physical stylesheet for production build using ExtractTextPlugin. This provides separate caching and avoids a flash of unstyled content on load.
@@ -84,6 +84,9 @@ function getConfig(env) {
     plugins: getPlugins(env),
     module: {
       loaders: getLoaders(env)
+    },
+    resolve: {
+      extensions: ["", ".webpack.js", ".web.js", ".js", ".ts", '.tsx']
     }
   };
 }
