@@ -91,16 +91,20 @@ Unfortunately, scripts in package.json can't be commented inline because the JSO
 │   ├── reducers              # Redux reducers. Your state is altered here based on actions
 │   ├── store                 # Redux store configuration
 │   └── styles                # CSS Styles, typically written in Sass
-│   └── typings               # TypeScript definition files.
-│   └── tsconfig.json         # TypeScript configuration file.
-│   └── tslint.json           # Configures TSLint
-│   └── tsd.json              # List of installed TypeScript definition files
 |
 ├── tools                     # Node scripts that run build related tools
 │   ├── build.js              # Runs the production build
 │   ├── buildHtml.js          # Builds index.html
 │   ├── distServer.js         # Starts webserver and opens final built app that's in dist in your default browser
-│   ├── srcServer.js          # Starts dev webserver with hot reloading and opens your app in your default browser
+│   └── srcServer.js          # Starts dev webserver with hot reloading and opens your app in your default browser
+│
+├── typings                   # TypeScript definition files.
+│   ├── require.d.ts          # function declaration for node's require.
+│   └── tsd.d.ts              # holds a reference to each TypeScript definition file.
+│
+├── tsconfig.json             # TypeScript configuration file.
+├── tsd.json                  # List of TypeScript definition files to be installed.
+├── tslint.json               # Configuration for tslint
 └── webpack.config.js         # Configures webpack
 ```
 
