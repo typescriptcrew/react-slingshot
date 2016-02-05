@@ -1,4 +1,4 @@
-# React Slingshot!
+# TypeScript React Slingshot!
 
 First off, all the work here aside from plugging in TypeScript and reworking the demo app in TypeScript was done in [@coryhouse](https://github.com/coryhouse)'s [React Slingshot](https://github.com/coryhouse/react-slingshot) project. Having said that, I had a need for a TypeScript React boilerplate, so I went with a project that I thought was solid and modified it to support TypeScript.
 
