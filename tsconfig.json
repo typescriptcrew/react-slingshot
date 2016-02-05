@@ -3,10 +3,13 @@
     "target": "es5",
     "jsx": "react",
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "allowJs": false
   },
+  "include": [
+    "src"
+  ],
   "exclude": [
-    "node_modules",
-    "tools"
+    "node_modules"
   ]
 }
