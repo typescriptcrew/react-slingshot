@@ -1,5 +1,5 @@
 // TODO: Add action interfaces
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/action-types';
 
 export function saveFuelSavings(settings) {
   return { type: types.SAVE_FUEL_SAVINGS, settings };

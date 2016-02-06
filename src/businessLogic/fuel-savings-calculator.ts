@@ -1,5 +1,5 @@
-import { roundNumber } from './mathHelper';
-import NumberFormatter from './numberFormatter';
+import { roundNumber } from './math-helper';
+import NumberFormatter from './number-formatter';
 
 // TODO: Add all the proper typings and return types.
 

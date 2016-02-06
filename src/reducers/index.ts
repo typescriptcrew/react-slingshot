@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import fuelSavingsAppState from './fuelSavings';
+import fuelSavingsAppState from './fuel-savings';
 
 const rootReducer = combineReducers({
   fuelSavingsAppState

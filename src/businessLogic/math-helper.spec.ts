@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import  { roundNumber } from './mathHelper';
+import  { roundNumber } from './math-helper';
 
 chai.should();
 

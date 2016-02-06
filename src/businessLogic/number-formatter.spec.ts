@@ -1,4 +1,4 @@
-import numberFormatter from './numberFormatter';
+import numberFormatter from './number-formatter';
 import * as chai from 'chai';
 
 chai.should();

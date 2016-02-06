@@ -1,7 +1,7 @@
-import {SAVE_FUEL_SAVINGS, CALCULATE_FUEL_SAVINGS} from '../constants/ActionTypes';
-import calculator from '../businessLogic/fuelSavingsCalculator';
-import dateHelper from '../businessLogic/dateHelper';
 import objectAssign = require('object-assign');
+import {SAVE_FUEL_SAVINGS, CALCULATE_FUEL_SAVINGS} from '../constants/action-types';
+import calculator from '../businessLogic/fuel-savings-calculator';
+import dateHelper from '../businessLogic/date-helper';
 
 const initialState = {
   dateModified: null,

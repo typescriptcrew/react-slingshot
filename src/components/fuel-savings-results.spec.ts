@@ -1,12 +1,8 @@
-// declare class ReactDomServer {
-//   public static renderToStaticMarkup(sut: any): string;
-// };
-
 import * as chai from 'chai';
 import * as cheerio from 'cheerio';
-import FuelSavingsResults from './FuelSavingsResults';
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
+import FuelSavingsResults from './fuel-savings-results';
 
 chai.should();
 

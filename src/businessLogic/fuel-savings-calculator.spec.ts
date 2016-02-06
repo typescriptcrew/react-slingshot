@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import calculator from './fuelSavingsCalculator';
+import calculator from './fuel-savings-calculator';
 
 chai.should();
 
