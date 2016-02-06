@@ -1,4 +1,4 @@
-import { roundNumber } from './mathHelper';
+import { roundNumber } from './math-helper';
 
 function getCurrencyFormattedNumber(value) {
   if (value === null) {

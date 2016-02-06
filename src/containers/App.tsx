@@ -6,8 +6,8 @@ import * as React from 'react';
 import { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import FuelSavingsApp from '../components/FuelSavingsApp';
-import * as FuelSavingsActions from '../actions/fuelSavingsActions';
+import FuelSavingsApp from '../components/fuel-savings-app';
+import * as FuelSavingsActions from '../actions/fuel-savings-actions';
 
 const App: any = (props) => {
   const { fuelSavingsAppState, actions } = props;

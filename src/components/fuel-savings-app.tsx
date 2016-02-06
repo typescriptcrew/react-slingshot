@@ -2,8 +2,8 @@
 import * as React from 'react';
 /* tslint:enable:no-unused-variable */
 import {PropTypes} from 'react';
-import FuelSavingsResults from './FuelSavingsResults';
-import FuelSavingsTextInput from './FuelSavingsTextInput';
+import FuelSavingsResults from './fuel-savings-results';
+import FuelSavingsTextInput from './fuel-savings-text-input';
 
 // TODO: get rid of any
 const FuelSavingsApp: any = (props) => {
