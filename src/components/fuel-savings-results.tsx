@@ -2,7 +2,7 @@
 import * as React from 'react';
 /* tslint:enable:no-unused-variable */
 import {PropTypes} from 'react';
-import numberFormatter from '../businessLogic/number-formatter';
+import numberFormatter from '../business-logic/number-formatter';
 
 // This is a stateless functional component. (Also known as pure or dumb component)
 // More info: https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html#stateless-functional-components
