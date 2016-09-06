@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Starter kit for creating apps with TypeScript, React and Redux",
   "scripts": {
-    "prestart": "npm run remove-dist && tsd install",
+    "postinstall": "typings install",
+    "prestart": "npm run remove-dist",
     "start": "parallelshell \"npm run lint:tools\" \"npm run test:watch\" \"npm run open:src\"",
     "open:src": "babel-node tools/src-server.js",
     "open:dist": "babel-node tools/dist-server.js",
@@ -11,7 +12,7 @@
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "build:html": "babel-node tools/build-html.js",
-    "prebuild": "npm run clean-dist && tsd install && npm run build:html",
+    "prebuild": "npm run clean-dist && npm run build:html",
     "build": "npm run test && babel-node tools/build.js && npm run open:dist",
     "test": "cross-env NODE_ENV=test mocha --reporter progress --require ts-node/register --recursive \"./src/**/*.spec.ts\"",
     "test:watch": "npm run test -- --watch"
@@ -60,6 +61,7 @@
     "tslint": "3.3.0",
     "tslint-loader": "2.1.0",
     "typescript": "1.8.0",
+    "typings": "1.3.3",
     "watch": "0.17.1",
     "webpack": "1.12.11",
     "webpack-dev-middleware": "1.4.0",

@@ -1,0 +1,17 @@
+{
+  "name": "ts-react-slingshot",
+  "globalDependencies": {
+    "assertion-error": "github:DefinitelyTyped/DefinitelyTyped/assertion-error/assertion-error.d.ts#2bbc03a4e408085a50e6315e40c8d42329e4e98e",
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#2bbc03a4e408085a50e6315e40c8d42329e4e98e",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf",
+    "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#2bbc03a4e408085a50e6315e40c8d42329e4e98e",
+    "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#2bbc03a4e408085a50e6315e40c8d42329e4e98e",
+    "object-assign": "github:DefinitelyTyped/DefinitelyTyped/object-assign/object-assign.d.ts#2bbc03a4e408085a50e6315e40c8d42329e4e98e",
+    "webpack": "github:DefinitelyTyped/DefinitelyTyped/webpack/webpack.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
+    "uglify-js": "github:DefinitelyTyped/DefinitelyTyped/uglify-js/uglify-js.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
+    "source-map": "github:DefinitelyTyped/DefinitelyTyped/source-map/source-map.d.ts#5d0f2126c8dac8fce0ff020218aea06607213b0d",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf",
+    "cheerio": "github:DefinitelyTyped/DefinitelyTyped/cheerio/cheerio.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf"
+  }
+}
