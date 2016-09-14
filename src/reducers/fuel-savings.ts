@@ -2,8 +2,30 @@ import objectAssign = require('object-assign');
 import {SAVE_FUEL_SAVINGS, CALCULATE_FUEL_SAVINGS} from '../constants/action-types';
 import calculator from '../business-logic/fuel-savings-calculator';
 import dateHelper from '../business-logic/date-helper';
+import {ISavings} from '../business-logic/fuel-savings-calculator';
 
-const initialState = {
+export type milesDrivenTimeframes = 'week'|'month'|'year';
+
+export interface IApplicationState {
+  dateModified: Date;
+  displayResults: boolean;
+  milesDriven: number;
+  milesDrivenTimeframe: milesDrivenTimeframes;
+  necessaryDataIsProvidedToCalculateSavings: boolean;
+  newMpg: number;
+  newPpg: number;
+  savings: ISavings;
+  tradeMpg: number;
+  tradePpg: number;
+}
+
+export interface IAction {
+  type: string;
+  fieldName?: string;
+  value: string|number;
+}
+
+const initialState: IApplicationState = {
   dateModified: null,
   displayResults: false,
   milesDriven: null,
@@ -25,7 +47,7 @@ const initialState = {
 // create a copy of the state passed and set new values on the copy.
 // Note that I'm using Object.assign to create a copy of current state
 // and update values on the copy.
-export default function fuelSavingsAppState(state = initialState, action) {
+export default function fuelSavingsAppState(state = initialState, action: IAction) {
   switch (action.type) {
     case SAVE_FUEL_SAVINGS:
       // For this example, just simulating a save by changing date modified.
