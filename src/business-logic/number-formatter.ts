@@ -1,11 +1,12 @@
 import { roundNumber } from './math-helper';
 
-function getCurrencyFormattedNumber(value) {
+function getCurrencyFormattedNumber(value: string|number): string {
   if (value === null) {
     return '';
   }
 
   value = this.getFormattedNumber(value);
+
   return `$${value}`;
 }
 
@@ -48,12 +49,15 @@ function getFormattedNumber(value: number): string {
   return formattedRoundedValue;
 }
 
-function isInt(n: any): boolean {
-  if (n === '' || n === null) {
+function isInt(numberToCheck: number|string): boolean {
+  if (numberToCheck === '' || numberToCheck === null) {
     return false;
   }
 
-  return n % 1 === 0;
+  // Wonky logic here, but the original project passes in a string or number.
+  const numberToValidate: number = typeof(numberToCheck) === 'number' ? numberToCheck as number : parseInt(numberToCheck as string, 10);
+
+  return numberToValidate % 1 === 0;
 }
 
 function scrubFormatting(value: string): string {

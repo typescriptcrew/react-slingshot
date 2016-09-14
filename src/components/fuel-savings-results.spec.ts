@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import FuelSavingsResults from './fuel-savings-results';
+import {IFuelSavingsResultsProps} from './fuel-savings-results';
 
 chai.should();
 
@@ -20,7 +21,7 @@ describe('Fuel Savings Calculator Results Component', () => {
   describe('Savings label', () => {
     it('displays as savings when savings exist', () => {
       // arrange
-      const props = {
+      const props: IFuelSavingsResultsProps = {
         savings: {
           annual: '120',
           monthly: '10',
@@ -41,7 +42,7 @@ describe('Fuel Savings Calculator Results Component', () => {
 
     it('display as loss when savings don\'t exist', () => {
       // arrange
-      const props = {
+      const props: IFuelSavingsResultsProps = {
         savings: {
           annual: '-120',
           monthly: '-10',

@@ -1,21 +1,26 @@
 /* tslint:disable:no-unused-variable */
 import * as React from 'react';
 /* tslint:enable:no-unused-variable */
-import {PropTypes} from 'react';
 import FuelSavingsResults from './fuel-savings-results';
 import FuelSavingsTextInput from './fuel-savings-text-input';
+import {IApplicationState} from '../reducers/fuel-savings';
+import {IActions} from '../containers/App';
 
-// TODO: get rid of any
-const FuelSavingsApp: any = (props) => {
+export interface IFuelSavingsAppProps {
+  actions: IActions;
+  fuelSavingsAppState: IApplicationState;
+};
+
+const FuelSavingsApp = (props: IFuelSavingsAppProps): JSX.Element => {
   const save = function () {
     props.actions.saveFuelSavings(props.fuelSavingsAppState);
   };
 
-  const onTimeframeChange = function (e) {
-    props.actions.calculateFuelSavings(props, 'milesDrivenTimeframe', e.target.value);
+  const onTimeframeChange: React.EventHandler<React.FormEvent> = function (e: React.FormEvent): void {
+    props.actions.calculateFuelSavings(props, 'milesDrivenTimeframe', (e.target as HTMLInputElement).value);
   };
 
-  const fuelSavingsKeypress = function (name, value) {
+  const fuelSavingsKeypress = function (name: string, value): void {
     props.actions.calculateFuelSavings(props, name, value);
   };
 
@@ -66,11 +71,6 @@ const FuelSavingsApp: any = (props) => {
       <input type='submit' value='Save' onClick={save} />
     </div>
   );
-};
-
-FuelSavingsApp.propTypes = {
-  actions: PropTypes.object.isRequired,
-  fuelSavingsAppState: PropTypes.object.isRequired
 };
 
 export default FuelSavingsApp;

@@ -4,13 +4,23 @@
 
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
+import {IApplicationState} from '../reducers/fuel-savings';
 
-export default function configureStore(initialState: any = undefined) {
+interface IWindowModuleHot extends Window {
+  module: {
+    hot: {
+      accept: (path: string, callback: () => void) => void;
+    };
+  };
+}
+
+export default function configureStore(initialState: IApplicationState = undefined) {
   const store = createStore(rootReducer, initialState);
+  const hotWindow = window as IWindowModuleHot;
 
-  if ((<any>window).module && (<any>window).module.hot) {
+  if (hotWindow.module && hotWindow.module.hot) {
     // Enable Webpack hot module replacement for reducers
-    (<any>window).module.hot.accept('../reducers', () => {
+    hotWindow.module.hot.accept('../reducers', () => {
       const nextReducer = require('../reducers');
       store.replaceReducer(nextReducer);
     });

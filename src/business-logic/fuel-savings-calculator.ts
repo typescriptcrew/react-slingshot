@@ -1,16 +1,30 @@
+import {milesDrivenTimeframes} from '../reducers/fuel-savings';
 import { roundNumber } from './math-helper';
 import NumberFormatter from './number-formatter';
 
-// TODO: Add all the proper typings and return types.
+export interface ISavings {
+  annual: string|number;
+  monthly: string|number;
+  threeYear: string|number;
+}
 
-function calculateMonthlyCost(milesDrivenPerMonth: number, ppg: number, mpg: number) {
+export interface ISettings { // TODO: Better interface name
+  // TODO: Get the right types here.
+  milesDriven?: number;
+  milesDrivenTimeframe?: string;
+  tradePpg?: number;
+  tradeMpg?: number;
+  newPpg?: number;
+  newMpg?: number;
+}
+
+function calculateMonthlyCost(milesDrivenPerMonth: number, ppg: number, mpg: number): number {
   const gallonsUsedPerMonth = milesDrivenPerMonth / mpg;
 
   return gallonsUsedPerMonth * ppg;
 };
 
-// TODO: switch to enum for milesDrivenTimeframe
-function calculateMilesDrivenPerMonth(milesDriven: number, milesDrivenTimeframe: string) {
+function calculateMilesDrivenPerMonth(milesDriven: number, milesDrivenTimeframe: milesDrivenTimeframes): number {
   const monthsPerYear = 12;
   const weeksPerYear = 52;
 
@@ -29,7 +43,7 @@ function calculateMilesDrivenPerMonth(milesDriven: number, milesDrivenTimeframe:
   }
 }
 
-function calculateSavings(settings) {
+function calculateSavings(settings): ISavings {
   const monthlySavings = this.calculateSavingsPerMonth(settings);
 
   return {
@@ -39,7 +53,7 @@ function calculateSavings(settings) {
   };
 }
 
-function calculateSavingsPerMonth(settings) {
+function calculateSavingsPerMonth(settings: ISettings): number {
   if (!settings.milesDriven) {
     return 0;
   }
@@ -52,7 +66,7 @@ function calculateSavingsPerMonth(settings) {
   return roundNumber(savingsPerMonth, 2);
 }
 
-function necessaryDataIsProvidedToCalculateSavings(settings) {
+function necessaryDataIsProvidedToCalculateSavings(settings: ISettings): boolean {
   return settings.newMpg > 0
     && settings.tradeMpg > 0
     && settings.newPpg > 0
