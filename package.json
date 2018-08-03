@@ -26,7 +26,7 @@
   "dependencies": {
     "object-assign": "4.0.1",
     "react": "0.14.7",
-    "react-dom": "0.14.7",
+    "react-dom": "16.0.1",
     "react-redux": "4.0.6",
     "redux": "3.0.5"
   },
